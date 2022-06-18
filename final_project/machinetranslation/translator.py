@@ -25,10 +25,8 @@ def english_to_french(english_text):
     This function takes an english words/sentences as input and returns a
     french translations
     """
-    if english_text == "":
-        french_text = ""
-    elif english_text is None:
-        french_text = None
+    if english_text == "" or english_text is None:
+        french_text = "No valid input detected."
     else:
         french_text = translator.translate(english_text,
         model_id="en-fr").get_result()['translations'][0]['translation']
@@ -39,10 +37,8 @@ def french_to_english(french_text):
     This function takes a French words/sentences as input and returns an
     English translations
     """
-    if french_text == "":
-        english_text = ""
-    elif french_text is None:
-        english_text = None
+    if french_text == "" or french_text is None:
+        english_text = "No valid input detected."
     else:
         english_text = translator.translate(french_text,
         model_id="fr-en").get_result()['translations'][0]['translation']
